@@ -1,0 +1,10 @@
+$http({
+	method:POST,
+	url:'registerUser'
+}).then (function successCallBack(response){
+	$scope.registerUser=response.data;
+},
+function errorCallBack(response){
+	var result =response.data;
+});
+	

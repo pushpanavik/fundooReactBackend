@@ -1,0 +1,10 @@
+$http({
+	method:POST,
+	url:'/localhost:8080/fundoo/registerUser'
+}).then (function successCallBack(response){
+	var result=response.registerCtrl
+},
+function errorCallBack(response){
+	
+});
+	

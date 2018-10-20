@@ -1,0 +1,4 @@
+#Tue Jul 17 17:14:16 IST 2018
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=breakpoint

@@ -1,0 +1,16 @@
+1530438484555	Delete element
+1530440021013	Delete element
+1530453053236	Delete element
+1530457544067	Rename package 'com.bridgeit.fundoonoteNote.configuration'
+1530511012334	Rename type 'MessageListenerConfiguration'
+1530511087426	Rename compilation unit 'JmsListenerConfiguration.java'
+1530511132672	Rename type 'MessagingConfiguration'
+1530527802089	Delete element
+1530612508700	Move compilation units
+1530612535070	Delete element
+1530614382159	Move compilation unit
+1530614453029	Rename compilation unit 'EmailAlreadyExistException.java'
+1530614586329	Rename compilation unit 'ExceptionClass.java'
+1530622144836	Rename compilation unit 'GlobalException.java'
+1530622986462	Move compilation unit
+1530945068841	Delete element

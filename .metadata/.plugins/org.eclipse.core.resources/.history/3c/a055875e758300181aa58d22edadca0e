@@ -1,0 +1,10 @@
+$http({
+	method:POST,
+	url:'registerUser'
+}).then (function successCallBack(response){
+	var result=response.data;
+},
+function errorCallBack(response){
+	var result =response.data;
+});
+	

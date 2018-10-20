@@ -1,0 +1,13 @@
+package com.bridgeit.fundooNote.utilservice;
+
+import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
+
+@SuppressWarnings("deprecation")
+public class MemoryLeakException extends Exception {
+	
+	private static final long serialVersionUID = 1L
+	
+
+}
+
+

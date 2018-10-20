@@ -1,0 +1,5 @@
+package com.bridgeit.fundooNote.utilservice;
+
+public class MemoryLeakException {
+
+}

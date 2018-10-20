@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 9 resources" deleteContents="false" description="Delete 9 resources" element1="/fundooApp/src/main/webapp/images/11111.jpeg" element2="/fundooApp/src/main/webapp/images/123.jpg" element3="/fundooApp/src/main/webapp/images/212122.jpeg" element4="/fundooApp/src/main/webapp/images/345.jpg" element5="/fundooApp/src/main/webapp/images/567.jpg" element6="/fundooApp/src/main/webapp/images/indepenenceday.jpg" element7="/fundooApp/src/main/webapp/images/rakshabandhan.jpg" element8="/fundooApp/src/main/webapp/images/welcome.jpg" element9="/fundooApp/src/main/webapp/images/wert.jpeg" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="9" stamp="1539342521610"/>
+</session>

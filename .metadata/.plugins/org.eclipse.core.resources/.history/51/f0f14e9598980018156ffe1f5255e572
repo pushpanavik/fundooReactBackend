@@ -1,0 +1,130 @@
+package com.bridgeit.fundooNote.noteservice.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bridgeit.fundooNote.exceptionservice.TokenNotFound;
+import com.bridgeit.fundooNote.labelservice.dao.ILabelDao;
+import com.bridgeit.fundooNote.labelservice.dao.LabelDaoImpl;
+import com.bridgeit.fundooNote.labelservice.model.Label;
+import com.bridgeit.fundooNote.noteservice.dao.INoteDao;
+import com.bridgeit.fundooNote.noteservice.model.Note;
+import com.bridgeit.fundooNote.userservice.dao.IUserDao;
+import com.bridgeit.fundooNote.userservice.model.User;
+import com.bridgeit.fundooNote.utilservice.VerifyJwtToken;
+
+
+@Service
+public class NoteServiceImpl implements INoteService {
+
+	@Autowired
+	private INoteDao noteDao;
+	
+	@Autowired
+	private IUserDao userDao;
+	
+	@Autowired
+	private ILabelDao labelDao;
+	
+	@Transactional
+	public long addNote(Note note,String token) {
+	
+		System.out.println("note token is" +token );
+		
+	int getId=VerifyJwtToken.getId(token);
+	User user=	noteDao.getUserById(getId);
+	
+	note.setUser(user);
+	System.out.println("user information from add note method" +user.getUserId());
+//	noteDao.addNote(note,user);
+	return noteDao.addNote(note,user);
+	}
+
+	@Transactional
+	@Override
+	public void updateNode(Note note,String token) {
+		
+		int getId=VerifyJwtToken.getId(token);
+				
+		System.out.println("user id      : "+getId); 
+		System.out.println("user info inside note " +note.getReminderDate());
+		System.out.println("user note id : "+note.getId());
+		if(getId==note.getUser().getUserId())
+		{
+			noteDao.updateNode(note);
+		}
+	}
+
+	@Transactional
+	@Override
+	public void deleteNode(int id) {
+		noteDao.deleteNode(id);
+	}
+
+	@Transactional
+	@Override
+	 public List<Note> displayAllNote(String token) {
+		if(token==null) {
+		try {
+					throw new TokenNotFound("token not found exception");
+		}
+		catch(TokenNotFound t)
+		{
+			t.printStackTrace();
+		}
+		}
+		else {
+		User user=userDao.getUserById(VerifyJwtToken.getId(token));
+		
+		System.out.println(VerifyJwtToken.getId(token));
+		
+	return	noteDao.displayAllNote(user);
+		}
+		return null;
+	}
+
+	@Transactional
+	@Override
+	public void noteLabel(int noteid, int labelid) {	
+		
+		Label labels=labelDao.getLabelById(labelid);
+		Note note=noteDao.getNoteById(noteid);
+		
+		note.getListOfLabels().add(labels);
+		labels.getNotes().add(note);
+		
+		labelDao.updateLabel(labels);
+		noteDao.updateNode(note);
+		
+	}
+
+	@Transactional
+	@Override
+	public boolean deleteLabel(int noteid, int labelid) {
+		
+		
+		Note note=noteDao.getNoteById(noteid);
+			
+		Label label=labelDao.getLabelById(labelid);
+		
+		if(note==null && label==null) {
+			
+			return false;
+			
+		}
+		
+		else {
+		note.getListOfLabels().remove(label);
+		label.getNotes().remove(note);
+		
+		
+		labelDao.updateLabel(label);
+		noteDao.updateNode(note);
+		return true;
+		}
+	}
+}

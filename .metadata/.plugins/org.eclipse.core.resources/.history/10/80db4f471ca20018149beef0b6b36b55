@@ -1,0 +1,8 @@
+package com.bridgeit.fundooNote.jsoup;
+
+public class JsoupExtractLink {
+
+	public static void main(String[] args) {
+		
+	}
+}

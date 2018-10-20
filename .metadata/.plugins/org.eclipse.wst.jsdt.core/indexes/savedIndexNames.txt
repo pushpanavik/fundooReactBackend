@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/home/bridgeit/Desktop/fundooNote/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3533858314.index
+4226921916.index
+2395648026.index
+519670365.index
+2830943729.index
+3522313653.index

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;reminder&apos; in &apos;com.bridgeit.fundooNote.noteservice.model.Note&apos; to &apos;reminderDate&apos;&#x0A;- Original project: &apos;fundooApp&apos;&#x0A;- Original element: &apos;com.bridgeit.fundooNote.noteservice.model.Note.reminder&apos;&#x0A;- Renamed element: &apos;com.bridgeit.fundooNote.noteservice.model.Note.reminderDate&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;reminder&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java&lt;com.bridgeit.fundooNote.noteservice.model{Note.java[Note^reminder" name="reminderDate" references="true" setter="false" stamp="1533205222894" textual="false" version="1.0"/>
+</session>

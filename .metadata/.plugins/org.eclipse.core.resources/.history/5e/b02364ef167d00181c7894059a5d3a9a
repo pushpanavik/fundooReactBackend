@@ -1,0 +1,17 @@
+package com.bridgeit.fundooNote.utilservice;
+
+import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
+
+public class MemoryLeakException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+	try {
+	    AbandonedConnectionCleanupThread.shutdown();
+	} catch (InterruptedException e) {
+	    System.out.println("SEVERE problem cleaning up: " + e.getMessage());
+	    e.printStackTrace();
+	}
+
+}
+}
+
